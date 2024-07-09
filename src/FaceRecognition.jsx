@@ -2,9 +2,9 @@ import React, { useState, useEffect, useRef } from 'react';
 import { useLocation } from 'react-router-dom';
 import * as faceapi from 'face-api.js';
 import backgroundImage from './images/images.jpg'; // Ensure correct path to your image
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, HashRouter } from 'react-router-dom';
 
-const MODEL_URL = '/models';
+const MODEL_URL = process.env.PUBLIC_URL + '/models';
 
 const FaceRecognition = () => {
   const location = useLocation();
@@ -51,7 +51,7 @@ const FaceRecognition = () => {
     return Promise.all(
       labels.map(async (label) => {
         console.log(`Fetching image for ${label}...`);
-        const img = await faceapi.fetchImage(`/face_images/${label}.jpg`);
+        const img = await faceapi.fetchImage(`${process.env.PUBLIC_URL}/face_images/${label}.jpg`);
         console.log(`Image for ${label} fetched.`);
 
         console.log(`Detecting face for ${label}...`);
@@ -96,7 +96,7 @@ const FaceRecognition = () => {
 
       // Clear previous drawings
       canvas.getContext('2d').clearRect(0, 0, canvas.width, canvas.height);
-      //faceapi.draw.drawDetections(canvas, resizedDetections);
+      // faceapi.draw.drawDetections(canvas, resizedDetections);
 
       resizedDetections.forEach(async (detection) => {
         const bestMatch = faceMatcher.findBestMatch(detection.descriptor);
@@ -113,7 +113,7 @@ const FaceRecognition = () => {
         } else if (bestMatch.label === 'unknown' || bestMatch.distance > 0.3) {
           console.log('Unknown face detected');
           setLoaderMsg('Unknown face detected');
-          
+
         } else if (bestMatch.label !== doctorId) {
           console.log('Wrong doctor');
           setLoaderMsg('Wrong doctor');
@@ -151,7 +151,6 @@ const styles = {
     justifyContent: 'center',
     alignItems: 'center',
     position: 'relative',
-
   },
   rectangle: {
     position: 'absolute',
@@ -162,7 +161,7 @@ const styles = {
     height: '75%', // Adjust height as needed
     backgroundColor: 'rgba(255, 255, 255, 0.8)', // White color with full opacity
     borderRadius: '15px', // Rounded corners
- // Place the rectangle behind other elements
+    zIndex: 0, // Place the rectangle behind other elements
   },
   loadingMsg: {
     color: 'grey',
@@ -179,7 +178,7 @@ const styles = {
     position: 'absolute',
     top: 0,
     left: 0,
-    
+    zIndex: 1,
   },
   button: {
     margin: '10px 100px', // Adjust vertical margin
