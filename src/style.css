@@ -1,0 +1,48 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0; /* Remove default margin */
+}
+
+.login-container {
+  background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent background */
+  padding: 60px; /* Increased padding */
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Increased shadow size */
+  width: 600px; /* Increased width */
+  height: auto; /* Adjust height as needed */
+  text-align: center;
+}
+
+h2 {
+  margin-bottom: 30px;
+  font-size: 30px; /* Increased font size */
+}
+
+label {
+  display: block;
+  margin: 15px 0 10px; /* Increased margin */
+  font-size: 18px; /* Increased font size */
+}
+
+input {
+  width: 100%;
+  padding: 15px; /* Increased padding */
+  margin-bottom: 15px; /* Increased margin */
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 18px; /* Increased font size */
+}
+
+button {
+  padding: 15px 20px; /* Increased padding */
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 18px; /* Increased font size */
+}
+
+button:hover {
+  background-color: #218838;
+}
