@@ -47,7 +47,7 @@ const FaceRecognition = () => {
   }, []);
 
   const loadLabeledImages = async () => {
-    const labels = ['doc1', 'doc2', 'doc3', 'doc4', 'doc5']; // Update with your labels
+    const labels = ['Colin', 'doc2', 'doc3', 'doc4', 'Reshav']; // Update with your labels
     return Promise.all(
       labels.map(async (label) => {
         console.log(`Fetching image for ${label}...`);
@@ -102,7 +102,7 @@ const FaceRecognition = () => {
         const bestMatch = faceMatcher.findBestMatch(detection.descriptor);
         console.log('Best match:', bestMatch);
 
-        if (bestMatch.label === doctorId && bestMatch.distance <= 0.4) {
+        if (bestMatch.label === doctorId && bestMatch.distance <= 0.5) {
           console.log('Successfully authenticated:', bestMatch.label);
           setLoaderMsg(`Successfully authenticated: ${bestMatch.label}`);
 
@@ -110,7 +110,7 @@ const FaceRecognition = () => {
             navigate('/Home2');
           }, 2000); // 2000 milliseconds = 2 seconds
 
-        } else if (bestMatch.label === 'unknown' || bestMatch.distance > 0.3) {
+        } else if (bestMatch.label === 'unknown' || bestMatch.distance > 0.5) {
           console.log('Unknown face detected');
           setLoaderMsg('Unknown face detected');
 

@@ -23,11 +23,11 @@ const DoctorLogin = () => {
 
   const validateLogin = (doctorId, password) => {
     const doctors = [
-      { id: 'doc1', password: 'password1' },
+      { id: 'Colin', password: 'Chang' },
       { id: 'doc2', password: 'password2' },
       { id: 'doc3', password: 'password3' },
       { id: 'doc4', password: 'password4' },
-      { id: 'doc5', password: 'password5' }
+      { id: 'Reshav', password: 'Menon' }
     ];
 
     return doctors.some(doctor => doctor.id === doctorId && doctor.password === password);
