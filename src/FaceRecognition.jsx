@@ -173,6 +173,8 @@ const styles = {
     display: 'block',
     margin: '20px 100px',
     zIndex: 1,
+    width: '40%', // Adjust width as needed
+    height: '40%', // Adjust height as needed
   },
   canvas: {
     position: 'absolute',
