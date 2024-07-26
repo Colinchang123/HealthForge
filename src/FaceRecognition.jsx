@@ -102,15 +102,15 @@ const FaceRecognition = () => {
         const bestMatch = faceMatcher.findBestMatch(detection.descriptor);
         console.log('Best match:', bestMatch);
 
-        if (bestMatch.label === doctorId && bestMatch.distance <= 0.5) {
+        if (bestMatch.label === doctorId && bestMatch.distance <= 0.4) {
           console.log('Successfully authenticated:', bestMatch.label);
           setLoaderMsg(`Successfully authenticated: ${bestMatch.label}`);
 
           const delay = setTimeout(() => {
-            navigate('/Home2');
+            navigate('/Home');
           }, 2000); // 2000 milliseconds = 2 seconds
 
-        } else if (bestMatch.label === 'unknown' || bestMatch.distance > 0.5) {
+        } else if (bestMatch.label === 'unknown' || bestMatch.distance > 0.4) {
           console.log('Unknown face detected');
           setLoaderMsg('Unknown face detected');
 
@@ -173,8 +173,6 @@ const styles = {
     display: 'block',
     margin: '20px 100px',
     zIndex: 1,
-    width: '40%', // Adjust width as needed
-    height: '40%', // Adjust height as needed
   },
   canvas: {
     position: 'absolute',

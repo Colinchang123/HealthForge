@@ -29,7 +29,8 @@ const HealthForge = () => {
         <div id="main">
           <div className="inner">
             <h1>Past patient data</h1>
-            <iframe width="1300" height="500" src="https://connectnpedu-my.sharepoint.com/:x:/g/personal/s10242330_connect_np_edu_sg/EXH3mXjm6O9Di8Knnu5dFnQBWe5syMzRaodUWkVF3Qs3iA?e=OF3CpV&action=embedview&wdbipreview=true"></iframe>
+            <iframe width="1300" height="500" src="https://connectnpedu-my.sharepoint.com/:x:/g/personal/s10242330_connect_np_edu_sg/EdUL4CfBmPBMsxZQa9DMzFwBGjf3f0qMHVi69Vk9n3ktcg?e=n6LHEA&action=embedview&wdbipreview=true"></iframe>
+                                                   
           </div>
         </div>
 

@@ -1,26 +1,34 @@
 import React, { useEffect } from 'react';
 import './App.css'; // Import your main application styles
 import './main.css'; // Import your main.css file
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 // Component function
-const App = () => {
+const Home = () => {
   const navigate = useNavigate();
 
-  // Function to be called when user accesses the chat bot
+  // Function to handle navigation to different pages
   const handleAccessChatBot = () => {
     navigate('/Generic');
   };
+
   const handleAccessVisual = () => {
+    console.log('Navigating to Visualizations');
     navigate('/Visualizations');
   };
+
   const handleAccessData = () => {
     navigate('/Data');
   };
+
   useEffect(() => {
-    // This effect runs on component mount
-    // You can add any additional initialization logic here
-  }, []);
+    // Any additional initialization logic can go here
+    // Example: redirect based on some condition or state
+
+    // For demonstration, you might want to navigate somewhere
+    // e.g., if (someCondition) navigate('/somewhere');
+
+  }, [navigate]); // Include navigate in the dependency array
 
   // Return JSX structure
   return (
@@ -51,7 +59,7 @@ const App = () => {
                 <img src={require('./images/pic01.jpg')} alt="" />
               </span>
               {/* Use onClick to call handleAccessChatBot function */}
-              <a href="#" onClick={handleAccessChatBot}>
+              <a href="#" onClick={(e) => { e.preventDefault(); handleAccessChatBot(); }}>
                 <h2>Access the chat bot</h2>
                 <div className="content">
                   <p>Using the chat bot, you will be able to predict mortality rates and ICU stays for your patients.</p>
@@ -73,7 +81,7 @@ const App = () => {
               <span className="image">
                 <img src={require('./images/pic03.jpg')} alt="" />
               </span>
-              <a href="#" onClick={handleAccessVisual}>
+              <a href="#" onClick={(e) => { e.preventDefault(); handleAccessVisual(); }}>
                 <h2>Visualizations</h2>
                 <div className="content">
                   <p>View visualizations of the patient data.</p>
@@ -84,7 +92,7 @@ const App = () => {
               <span className="image">
                 <img src={require('./images/pic04.jpg')} alt="" />
               </span>
-              <a href="#" onClick={handleAccessData}>
+              <a href="#" onClick={(e) => { e.preventDefault(); handleAccessData(); }}>
                 <h2>Patient data</h2>
                 <div className="content">
                   <p>View past patient data</p>
@@ -139,4 +147,4 @@ const App = () => {
   );
 }
 
-export default App;
+export default Home;
