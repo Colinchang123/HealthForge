@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/HealthForge/static/css/main.039aaae6.css",
-    "main.js": "/HealthForge/static/js/main.b7a81aa0.js",
+    "main.js": "/HealthForge/static/js/main.9c3b6631.js",
     "static/media/fa-solid-900.svg": "/HealthForge/static/media/fa-solid-900.7a8b4f130182d19a2d7c.svg",
     "static/media/fa-brands-400.svg": "/HealthForge/static/media/fa-brands-400.2f517e09eb2ca6650ff5.svg",
     "static/media/fa-solid-900.eot": "/HealthForge/static/media/fa-solid-900.9bbb245e67a133f6e486.eot",
@@ -24,10 +24,10 @@
     "static/media/fa-regular-400.woff2": "/HealthForge/static/media/fa-regular-400.7a3337626410ca2f4071.woff2",
     "index.html": "/HealthForge/index.html",
     "main.039aaae6.css.map": "/HealthForge/static/css/main.039aaae6.css.map",
-    "main.b7a81aa0.js.map": "/HealthForge/static/js/main.b7a81aa0.js.map"
+    "main.9c3b6631.js.map": "/HealthForge/static/js/main.9c3b6631.js.map"
   },
   "entrypoints": [
     "static/css/main.039aaae6.css",
-    "static/js/main.b7a81aa0.js"
+    "static/js/main.9c3b6631.js"
   ]
 }
