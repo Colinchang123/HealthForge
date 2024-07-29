@@ -18,7 +18,7 @@ const HealthForge = () => {
         <header id="header">
           <div className="inner">
             {/* Logo */}
-            <a href="index.html" className="logo">
+            <a className="logo">
               <span className="symbol"><img src={require('./images/logo2.png')} alt="" /></span>
               <span className="title">Doctor Chat Bot</span>
             </a>

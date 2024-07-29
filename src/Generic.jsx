@@ -21,7 +21,7 @@ const App = () => {
         <header id="header">
           <div className="inner">
             {/* Logo */}
-            <a href="index.html" className="logo">
+            <a className="logo">
               <span className="symbol">
                 <img src={logoImage} alt="" />
               </span>

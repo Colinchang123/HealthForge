@@ -70,7 +70,7 @@ const Home = () => {
               <span className="image">
                 <img src={require('./images/pic02.jpg')} alt="" />
               </span>
-              <a href="https://www.spatial.io/s/miccuthemans-Lo-Fi-Scene-662b2cd7b3bd8b7727b01de2?share=8186157624944434813">
+              <a href="https://mega.nz/file/0d8QmabJ#BeDnyvTwx-p_2IHTiukU18x6y0t6B3gAThAezNnWa0M">
                 <h2>Visit the Meta Hospital</h2>
                 <div className="content">
                   <p>Visit the Meta world created to simulate hospitals</p>
