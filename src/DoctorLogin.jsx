@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import './style.css'; // Adjust the path as necessary
 import backgroundImage from './images/images.jpg'; // Ensure the correct path
 import { useNavigate } from 'react-router-dom';
@@ -7,17 +7,35 @@ const DoctorLogin = () => {
   const [doctorId, setDoctorId] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate(); // Declare useNavigate outside of handleSubmit
+  const wrongTimesRef = useRef(0);
+  const canAuth = useRef(true);
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    if (validateLogin(doctorId, password)) {
+    if (validateLogin(doctorId, password) && canAuth.current == true) {
       localStorage.setItem('isLoggedIn', 'true');
       localStorage.setItem('loggedInUser', doctorId); // Store the logged-in user's ID
       
       // Navigate to FaceRecognition page
       navigate('/FaceRecognition', { state: { doctorId } });
-    } else {
-      alert('Invalid Doctor ID or Password');
+    } 
+    else if (canAuth.current == true){
+      wrongTimesRef.current ++
+    
+      if (wrongTimesRef.current < 3){
+        alert('Invalid Doctor ID or Password');
+      }
+      else if (wrongTimesRef.current == 3){
+        alert('Invalid Doctor ID or Password, if authentication fails again, account will be locked for 30 seconds ');
+      }
+      else if (wrongTimesRef.current >= 4){
+        alert('Invalid Doctor ID or Password, account will now be locked for 30 seconds ');
+        canAuth.current = false
+
+        const delay = setTimeout(() => {
+          canAuth.current = true
+        }, 10000); 
+      }
     }
   };
 

@@ -18,6 +18,9 @@ const FaceRecognition = () => {
   const videoElement = useRef(null);
   const canvasElement = useRef(null);
 
+  const wrongTimesRef = useRef(0);
+  const canAuth = useRef(true);
+
   const loadModels = async () => {
     setLoaderMsg('Please wait while face authenticator is loading...');
     console.log('Loading models...');
@@ -77,7 +80,7 @@ const FaceRecognition = () => {
   };
 
   const loadRecognizedFaces = async () => {
-    if (!videoElement.current || !faceMatcher) return;
+    if (!videoElement.current || !faceMatcher || canAuth.current == false) return;
 
     setRecognitionError('');
     console.log('Detecting faces in video frame...');
@@ -98,7 +101,7 @@ const FaceRecognition = () => {
       canvas.getContext('2d').clearRect(0, 0, canvas.width, canvas.height);
       // faceapi.draw.drawDetections(canvas, resizedDetections);
 
-      resizedDetections.forEach(async (detection) => {
+      for (const detection of resizedDetections) {
         const bestMatch = faceMatcher.findBestMatch(detection.descriptor);
         console.log('Best match:', bestMatch);
 
@@ -111,14 +114,30 @@ const FaceRecognition = () => {
           }, 2000); // 2000 milliseconds = 2 seconds
 
         } else if (bestMatch.label === 'unknown' || bestMatch.distance > 0.4) {
-          console.log('Unknown face detected');
-          setLoaderMsg('Unknown face detected');
+          wrongTimesRef.current++;
+          console.log('Unknown face detected' + wrongTimesRef.current);
+
+          if (wrongTimesRef.current < 3){
+            setLoaderMsg('Unknown face detected ');
+          }
+          else if (wrongTimesRef.current == 3){
+            setLoaderMsg('Unknown face detected, if face authentication fails again, account will be locked for 30 seconds ');
+          }
+          else if (wrongTimesRef.current >= 4){
+            setLoaderMsg('Unknown face detected, account will now be locked for 30 seconds ');
+            canAuth.current = false
+
+            const delay = setTimeout(() => {
+              canAuth.current = true
+              setLoaderMsg('Please allow webcam access and have your face in view of the webcam');
+            }, 10000); 
+          }
 
         } else if (bestMatch.label !== doctorId) {
           console.log('Wrong doctor');
           setLoaderMsg('Wrong doctor');
         }
-      });
+      }
     } catch (error) {
       console.error('Error detecting faces:', error);
       setRecognitionError('Error detecting faces. Please try again.');
