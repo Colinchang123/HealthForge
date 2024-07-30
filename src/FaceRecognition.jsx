@@ -157,8 +157,8 @@ const styles = {
     top: '50%', // Adjust as needed
     left: '50%', // Adjust as needed
     transform: 'translate(-50%, -50%)',
-    width: '45%', // Adjust width as needed
-    height: '75%', // Adjust height as needed
+    width: '53%', // Adjust width as needed
+    height: '83%', // Adjust height as needed
     backgroundColor: 'rgba(255, 255, 255, 0.8)', // White color with full opacity
     borderRadius: '15px', // Rounded corners
     zIndex: 0, // Place the rectangle behind other elements
