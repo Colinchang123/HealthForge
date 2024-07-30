@@ -103,7 +103,7 @@ const Home = () => {
               <span className="image">
                 <img src={require('./images/pic05.jpg')} alt="" />
               </span>
-              <a href="http://127.0.0.1:5000/">
+              <a href="https://dscpvoice.onrender.com/">
                 <h2>Voice Enabled Chatbot</h2>
                 <div className="content">
                   <p>Use our voice enabled chatbot with a built-in Prediction Model</p>
