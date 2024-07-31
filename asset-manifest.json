@@ -1,18 +1,19 @@
 {
   "files": {
     "main.css": "/HealthForge/static/css/main.039aaae6.css",
-    "main.js": "/HealthForge/static/js/main.70b2cc55.js",
+    "main.js": "/HealthForge/static/js/main.a026730c.js",
     "static/media/fa-solid-900.svg": "/HealthForge/static/media/fa-solid-900.7a8b4f130182d19a2d7c.svg",
     "static/media/fa-brands-400.svg": "/HealthForge/static/media/fa-brands-400.2f517e09eb2ca6650ff5.svg",
+    "static/media/Viz1.png": "/HealthForge/static/media/Viz1.6a5d3f1e9b58382598ec.png",
+    "static/media/Viz3.png": "/HealthForge/static/media/Viz3.6e9bb1a2ceab9da9858e.png",
+    "static/media/Viz2.png": "/HealthForge/static/media/Viz2.b883b4c7edbde52f2942.png",
     "static/media/fa-solid-900.eot": "/HealthForge/static/media/fa-solid-900.9bbb245e67a133f6e486.eot",
     "static/media/fa-solid-900.ttf": "/HealthForge/static/media/fa-solid-900.be9ee23c0c6390141475.ttf",
     "static/media/fa-regular-400.svg": "/HealthForge/static/media/fa-regular-400.4689f52cc96215721344.svg",
     "static/media/fa-brands-400.eot": "/HealthForge/static/media/fa-brands-400.23f19bb08961f37aaf69.eot",
     "static/media/fa-brands-400.ttf": "/HealthForge/static/media/fa-brands-400.527940b104eb2ea366c8.ttf",
     "static/media/fa-solid-900.woff": "/HealthForge/static/media/fa-solid-900.eeccf4f66002c6f2ba24.woff",
-    "static/media/vis1.jpg": "/HealthForge/static/media/vis1.266e52689273132a97a6.jpg",
     "static/media/fa-brands-400.woff": "/HealthForge/static/media/fa-brands-400.2285773e6b4b172f07d9.woff",
-    "static/media/vis2.jpg": "/HealthForge/static/media/vis2.8235fc05c55fd2a91298.jpg",
     "static/media/fa-solid-900.woff2": "/HealthForge/static/media/fa-solid-900.1551f4f60c37af51121f.woff2",
     "static/media/fa-brands-400.woff2": "/HealthForge/static/media/fa-brands-400.d878b0a6a1144760244f.woff2",
     "static/media/images.jpg": "/HealthForge/static/media/images.bfa75965b53216a72ea3.jpg",
@@ -24,10 +25,10 @@
     "static/media/fa-regular-400.woff2": "/HealthForge/static/media/fa-regular-400.7a3337626410ca2f4071.woff2",
     "index.html": "/HealthForge/index.html",
     "main.039aaae6.css.map": "/HealthForge/static/css/main.039aaae6.css.map",
-    "main.70b2cc55.js.map": "/HealthForge/static/js/main.70b2cc55.js.map"
+    "main.a026730c.js.map": "/HealthForge/static/js/main.a026730c.js.map"
   },
   "entrypoints": [
     "static/css/main.039aaae6.css",
-    "static/js/main.70b2cc55.js"
+    "static/js/main.a026730c.js"
   ]
 }
